@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>지금, 여기 — 작은 사진책</title>
+  <meta name="description" content="사진과 짧은 글로 기록한 작은 온라인 책자">
+  <style>
+    :root {
+      --paper: #fbfaf7;
+      --ink: #292821;
+      --muted: #77736a;
+      --line: #e8e4dc;
+      --accent: #927e63;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: #efede8;
+      color: var(--ink);
+      font-family: Georgia, "Noto Serif KR", "Batang", serif;
+      line-height: 1.8;
+    }
+    .book {
+      width: min(100% - 32px, 820px);
+      margin: 36px auto;
+      padding: clamp(22px, 6vw, 64px);
+      background: var(--paper);
+      box-shadow: 0 12px 40px #29282112;
+    }
+    .cover {
+      min-height: 760px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding-bottom: 48px;
+    }
+    .overline {
+      margin: 0 0 14px;
+      color: var(--accent);
+      font: 11px/1.4 Arial, sans-serif;
+      letter-spacing: .24em;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(42px, 8vw, 68px);
+      font-weight: 400;
+      letter-spacing: -.07em;
+    }
+    .subtitle { margin: 10px 0 30px; color: var(--muted); font-size: 14px; }
+    .cover img {
+      display: block;
+      width: min(100%, 470px);
+      height: 440px;
+      object-fit: cover;
+    }
+    .edition {
+      margin: 22px 0 0;
+      color: var(--muted);
+      font: 10px Arial, sans-serif;
+      letter-spacing: .28em;
+    }
+    .contents {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px 24px;
+      padding: 17px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      font: 12px Arial, sans-serif;
+    }
+    a { color: inherit; text-decoration: none; }
+    .contents a { color: var(--muted); }
+    .contents a:hover { color: var(--accent); }
+    .page {
+      padding: 76px 0 84px;
+      border-bottom: 1px solid var(--line);
+      scroll-margin-top: 24px;
+    }
+    .page-head {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 22px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .page-head .number { color: var(--ink); font-size: 15px; }
+    .page-head .rule { height: 1px; flex: 1; background: var(--line); }
+    h2 {
+      margin: 0 0 26px;
+      font-size: clamp(25px, 5vw, 34px);
+      font-weight: 400;
+      letter-spacing: -.05em;
+    }
+    figure { margin: 0; }
+    .page img {
+      display: block;
+      width: 100%;
+      max-height: 520px;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      background: #e9e5dc;
+    }
+    figcaption {
+      margin-top: 9px;
+      color: var(--muted);
+      text-align: right;
+      font-size: 11px;
+    }
+    .copy {
+      max-width: 620px;
+      margin: 28px auto 0;
+      font-size: 15px;
+      line-height: 2.1;
+      word-break: keep-all;
+    }
+    .copy p { margin: 0 0 12px; }
+    footer {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 22px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+    @media (max-width: 600px) {
+      body { background: var(--paper); }
+      .book { width: 100%; margin: 0; padding: 24px 22px 36px; box-shadow: none; }
+      .cover { min-height: 650px; }
+      .cover img { height: 360px; }
+      .page { padding: 54px 0 62px; }
+      .copy { font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="book">
+    <header class="cover" id="top">
+      <p class="overline">A SMALL PHOTO BOOK</p>
+      <h1>지금, 여기</h1>
+      <p class="subtitle">일상이 특별해지는 순간들</p>
+      <!-- 표지 사진은 images/cover.jpg 파일을 사용합니다. -->
+      <img src="images/cover.jpg" alt="바다 위로 해가 지는 풍경">
+      <p class="edition">PHOTO BOOK · 2026</p>
+    </header>
+
+    <nav class="contents" aria-label="목차">
+      <a href="#page1">01 오늘의 햇살</a>
+      <a href="#page2">02 계절의 풍경</a>
+      <a href="#page3">03 작은 행복</a>
+      <a href="#page4">04 그리고, 우리</a>
+    </nav>
+
+    <section class="page" id="page1">
+      <div class="page-head"><span class="number">01</span><span class="rule"></span><span>오늘의 햇살</span></div>
+      <h2>햇살이 비추는 오늘</h2>
+      <figure>
+        <img src="images/photo-01.jpg" alt="푸른 하늘 아래 피어난 하얀 데이지">
+        <figcaption>01 / 작은 꽃들이 알려주는 계절</figcaption>
+      </figure>
+      <div class="copy">
+        <p>햇살이 비추는 오늘, 그 순간이 참 좋다.</p>
+        <p>평범한 하루에도 가만히 들여다보면 반짝이는 장면이 있다.</p>
+      </div>
+    </section>
+
+    <section class="page" id="page2">
+      <div class="page-head"><span class="number">02</span><span class="rule"></span><span>계절의 풍경</span></div>
+      <h2>계절은 다시 찾아온다</h2>
+      <figure>
+        <img src="images/photo-02.jpg" alt="벚꽃이 피어난 조용한 봄날의 거리">
+        <figcaption>02 / 봄이 머무는 길</figcaption>
+      </figure>
+      <div class="copy">
+        <p>언제나 그 자리에, 계절은 다시 찾아온다.</p>
+        <p>익숙한 풍경도 계절이 바뀌면 새롭게 보인다.</p>
+      </div>
+    </section>
+
+    <section class="page" id="page3">
+      <div class="page-head"><span class="number">03</span><span class="rule"></span><span>작은 행복</span></div>
+      <h2>잠시 쉬어가는 시간</h2>
+      <figure>
+        <img src="images/photo-03.jpg" alt="햇살이 드는 테이블 위 커피 한 잔">
+        <figcaption>03 / 커피 한 잔의 여유</figcaption>
+      </figure>
+      <div class="copy">
+        <p>커피 한 잔의 여유가 오늘을 더 빛나게 한다.</p>
+        <p>잠깐 멈춰 쉬어가는 시간도 소중한 하루의 일부다.</p>
+      </div>
+    </section>
+
+    <section class="page" id="page4">
+      <div class="page-head"><span class="number">04</span><span class="rule"></span><span>그리고, 우리</span></div>
+      <h2>지금 이 순간도</h2>
+      <figure>
+        <img src="images/photo-04.jpg" alt="잔잔한 바다 위를 항해하는 작은 돛단배">
+        <figcaption>04 / 바다 위의 고요한 순간</figcaption>
+      </figure>
+      <div class="copy">
+        <p>지금 이 순간도, 참 소중하다.</p>
+        <p>이 작은 기록이 오래도록 좋은 기억으로 남기를.</p>
+      </div>
+    </section>
+
+    <footer><a href="#top">지금, 여기</a><span>THE END</span></footer>
+  </main>
+</body>
+</html>
